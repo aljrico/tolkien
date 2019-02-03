@@ -1,5 +1,5 @@
 library(tidyverse)
-devtools::install_github("aljrico/harrypotter")
+devtools::install_github("aljrico/tolkien")
 library(tolkien)
 library(gridExtra)
 

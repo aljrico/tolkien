@@ -1,7 +1,7 @@
 Package: tolkien
 Type: Package
-Title: Colour Palettes Inspired by the Legendarium from Tolkien.
-Version: 2.1.0
+Title: Colour Palettes Inspired by the Legendarium from Tolkien
+Version: 0.1.0
 Authors@R: c(
     person("Alejandro", "Jimenez Rico", email = "aljrico@gmail.com", role = c("aut", "cre")),
     person("Alfredo", "Hernandez", email = "aldomann.designs@gmail.com", role = "aut"))

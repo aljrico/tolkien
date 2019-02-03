@@ -37,7 +37,7 @@ tolkien_palettes <- function(){
 #'
 #'
 #'
-#' Harry Potter Colour Map.
+#' Tolkien Colour Map.
 #'
 #' This function creates a vector of \code{n} equally spaced colors along the
 #' 'tolkien colour map' of your selection
@@ -55,10 +55,8 @@ tolkien_palettes <- function(){
 #' are ordered from darkest to lightest. If -1, the order of colors is reversed.
 #'
 #' @param option A character string indicating the colourmap from a option to use.
-#' Four houses are available: "Gryffindor", "Slytherin", "Ravenclaw" and "Hufflepuff".
 #'
 #' @param house A character string indicating the colourmap from a option to use. This parameter is deprectaed, 'option' should be used instead.
-#' Four houses are available: "Gryffindor", "Slytherin", "Ravenclaw" and "Hufflepuff".
 #'
 #' @return \code{tolkien} returns a character vector, \code{cv}, of color hex
 #' codes. This can be used either to create a user-defined color palette for
@@ -91,15 +89,15 @@ tolkien_palettes <- function(){
 #' ggplot(dat, aes(x = x, y = y)) +
 #'   geom_hex() +
 #'   coord_fixed() +
-#'   scale_fill_gradientn(colours = tolkien(128, option = 'Always'))
+#'   scale_fill_gradientn(colours = tolkien(128, option = 'Sauron'))
 #'
-#' pal <- tolkien(256, option = "Ravenclaw")
+#' pal <- tolkien(256, option = "Sauron")
 #' image(volcano, col = pal)
 #'
 #' @rdname tolkien
 #' @export
 #'
-tolkien <- function(n, alpha = 1, begin = 0, end = 1, direction = 1, option = 'Always', house = NULL) {
+tolkien <- function(n, alpha = 1, begin = 0, end = 1, direction = 1, option = 'Sauron', house = NULL) {
 
 	if(!is.null(house)) option <- house
 
@@ -136,7 +134,7 @@ tolkien <- function(n, alpha = 1, begin = 0, end = 1, direction = 1, option = 'A
 #' @rdname tolkien
 #'
 #' @export
-tolkien_pal <- function(alpha = 1, begin = 0, end = 1, direction = 1, option = 'Always', house = NULL) {
+tolkien_pal <- function(alpha = 1, begin = 0, end = 1, direction = 1, option = 'Sauron', house = NULL) {
 
 	if(!is.null(house)) option <- house
 	option <- tolower(option)
@@ -154,7 +152,7 @@ tolkien_pal <- function(alpha = 1, begin = 0, end = 1, direction = 1, option = '
 #' @importFrom ggplot2 scale_fill_gradientn scale_color_gradientn discrete_scale
 #'
 #' @export
-scale_color_tolkien <- function(option = 'Always', ..., alpha = 1, begin = 0, end = 1, direction = 1,
+scale_color_tolkien <- function(option = 'Sauron', ..., alpha = 1, begin = 0, end = 1, direction = 1,
 													 discrete = FALSE, house = NULL) {
 
 	if(!is.null(house)) option <- house
@@ -178,7 +176,7 @@ scale_colour_tolkien <- scale_color_tolkien
 #' @rdname scale_tolkien
 #' @aliases scale_color_tolkien
 #' @export
-scale_colour_tolkien_d <- function(option = 'Always', ..., alpha = 1, begin = 0, end = 1,
+scale_colour_tolkien_d <- function(option = 'Sauron', ..., alpha = 1, begin = 0, end = 1,
 															direction = 1) {
 	discrete_scale("colour", "tolkien", tolkien_pal(alpha, begin, end, direction, option), ...)
 }
@@ -193,7 +191,7 @@ scale_color_tolkien_d <- scale_colour_tolkien_d
 #' @aliases scale_fill_tolkien
 #' @importFrom ggplot2 discrete_scale
 #' @export
-scale_fill_tolkien_d <- function(option = 'Always', ..., alpha = 1, begin = 0, end = 1,
+scale_fill_tolkien_d <- function(option = 'Sauron', ..., alpha = 1, begin = 0, end = 1,
 														direction = 1) {
 	discrete_scale("fill", "tolkien", tolkien_pal(alpha, begin, end, direction, option), ...)
 }
@@ -204,9 +202,9 @@ scale_fill_tolkien_d <- function(option = 'Always', ..., alpha = 1, begin = 0, e
 #' @export
 tolkien <- tolkien
 
-#' Harry Potter colour scales
+#' Talkien colour scales
 #'
-#' Uses the Harry Potter color scale.
+#' Uses the Tolkien color scale.
 #'
 #' For \code{discrete == FALSE} (the default) all other arguments are as to
 #' \link[ggplot2]{scale_fill_gradientn} or \link[ggplot2]{scale_color_gradientn}.
@@ -228,10 +226,8 @@ tolkien <- tolkien
 #' @param discrete generate a discrete palette? (default: \code{FALSE} - generate continuous palette)
 #'
 #' @param option A character string indicating the colourmap  to use.
-#' Four houses are available: "Gryffindor", "Slytherin", "Ravenclaw" and "Hufflepuff".
 #'
 #' @param house A character string indicating the colourmap from a option to use. This parameter is deprectaed, 'option' should be used instead.
-#' Four houses are available: "Gryffindor", "Slytherin", "Ravenclaw" and "Hufflepuff".
 #'
 #' @rdname scale_tolkien
 #'
@@ -248,21 +244,21 @@ tolkien <- tolkien
 #'
 #' ggplot(mtcars, aes(factor(cyl), fill=factor(vs))) +
 #' geom_bar() +
-#' scale_fill_tolkien(discrete = TRUE, option = "Ravenclaw")
+#' scale_fill_tolkien(discrete = TRUE, option = "Sauron")
 #'
 #' ggplot(mtcars, aes(factor(gear), fill=factor(carb))) +
 #' geom_bar() +
-#' scale_fill_tolkien(discrete = TRUE, option = "Slytherin")
+#' scale_fill_tolkien(discrete = TRUE, option = "Sauron")
 #'
-#' ggplot(mtcars, aes(x = mpg, y = disp, colour = tolkien)) +
+#' ggplot(mtcars, aes(x = mpg, y = disp, colour = hp)) +
 #' geom_point(size = 2) +
-#' scale_colour_tolkien(option = "Gryffindor")
+#' scale_colour_tolkien(option = "Sauron")
 #'
 #'
 #'
 #'
 #' @export
-scale_fill_tolkien <- function(option = 'Always', ..., alpha = 1, begin = 0, end = 1, direction = 1,
+scale_fill_tolkien <- function(option = 'Sauron', ..., alpha = 1, begin = 0, end = 1, direction = 1,
 													discrete = FALSE, house = NULL) {
 
 	if(!is.null(house)) option <- house
