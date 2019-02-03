@@ -10,7 +10,7 @@ This package provides the first round of palettes derived from the *Tolkien* uni
 
 They have been chosen manually, taking into account its consistency with all the existing branding of the franchise, but its suitability for data visualisation. 
 
-> Most of us need to _listen_ to the music to understand how beautiful it is. But often that’s how statistics are presented: we show the notes instead of playing the music.
+> It's the job that's never started as takes longest to finish.
 
 The colour palette should be beautiful, useful for plotting data and shoulr relate to desired style; in this case, should relate to the Tolkien legendarium. Some of the colours might change in future versions, in order to find this balance between suitability for plotting and relatable to the Tolkien legendarium.
 
