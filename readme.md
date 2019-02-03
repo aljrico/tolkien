@@ -52,7 +52,7 @@ pal <- tolkien(n = 128, house = "Sauron")
 image(volcano, col = pal)
 ```
 
-<center><img src="https://raw.githubusercontent.com/aljrico/tolkien/master/readme_raw_files/examples/gryffindor_volcano.png" ></center>
+<center><img src="https://raw.githubusercontent.com/aljrico/tolkien/master/readme_raw_files/examples/sauron_volcano.png" ></center>
 
 ## ggplot2
 
